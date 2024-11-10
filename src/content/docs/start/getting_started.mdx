@@ -5,11 +5,14 @@ description: Quickly get up and running with FerrumC.
 perv: false
 ---
 
-import { Aside, Badge, FileTree, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import { Badge, FileTree, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 import HeadlessTabs from '~/components/HeadlessTabs.astro';
 
 ## Prerequisites
-<Aside type="tip">You will not need to install these prerequisites if you are not compiling it yourself!</Aside>
+:::tip
+You will not need to install these prerequisites if you are not compiling it yourself!
+:::
+
 
 Before starting, make sure you have the following prerequisites:
 <Tabs syncKey="os">
@@ -130,7 +133,9 @@ Before starting, make sure you have the following prerequisites:
 ## Installation
 
 ### Option 1: Download Binary
-<Aside type="note">You must have a GitHub account to use this method.</Aside>
+:::note
+You must have a GitHub account to use this method.
+:::
 <Steps>
 1. **Head over to FerrumC's [Github Actions page](https://github.com/ferrumc-rs/ferrumc/actions?query=branch%3Arewrite%2Fv3).**
 
@@ -163,7 +168,7 @@ This will create a `ferrumc` executable in the `target/release` directory.
     2. Select the **latest** successful workflow
 
     2. <Badge text="Optional" variant="note" /> **Generate a config file**
-        <Tabs syncKey="os">
+        <HeadlessTabs syncKey="os">
             <TabItem label="Linux">
                 ~~~bash
                 ./ferrumc --setup
@@ -179,12 +184,12 @@ This will create a `ferrumc` executable in the `target/release` directory.
                 .\ferrumc.exe --setup
                 ~~~
             </TabItem>
-        </Tabs>
+        </HeadlessTabs>
 
     3. **Import an existing world**
 
         Place the region files (.mca) in the folder named import then run
-        <Tabs syncKey="os">
+        <HeadlessTabs syncKey="os">
             <TabItem label="Linux">
                 ~~~bash
                 ./ferrumc --import
@@ -200,7 +205,7 @@ This will create a `ferrumc` executable in the `target/release` directory.
                 .\ferrumc.exe --import
                 ~~~
             </TabItem>
-        </Tabs>
+        </HeadlessTabs>
         The location of these files in minecraft is explained [here](https://minecraft.wiki/w/Region_file_format#Location)
         <HeadlessTabs syncKey="os">
             <TabItem label="Linux">
@@ -228,7 +233,7 @@ This will create a `ferrumc` executable in the `target/release` directory.
                 </FileTree>
             </TabItem>
         </HeadlessTabs>
-        <Aside type="tip">
+        :::tip
             If you want to modify batch size (default 150), you can use
             <HeadlessTabs syncKey="os">
                 <TabItem label="Linux">
@@ -249,11 +254,11 @@ This will create a `ferrumc` executable in the `target/release` directory.
             </HeadlessTabs>
             Basically the number of chunks to import at once, higher => faster but more CPU intensive.
             Max is 1024, since that's the max number of chunks in a region(.mca) file.
-        </Aside>
+        :::
 </Steps>
 
 ## Run
-
+To start the server, run the following command:
 <HeadlessTabs syncKey="os">
     <TabItem label="Linux">
         ~~~bash
@@ -272,33 +277,11 @@ This will create a `ferrumc` executable in the `target/release` directory.
     </TabItem>
 </HeadlessTabs>
 
-You can change logging level by using ```--log=<level>```:
-<Tabs syncKey="os">
-    <TabItem label="Linux">
-        ~~~bash
-        ./ferrumc --log=info #for info level logging
-        ~~~
-    </TabItem>
-    <TabItem label="macOS">
-        ~~~bash
-        ./ferrumc --log=info #for info level logging
-        ~~~
-    </TabItem>
-    <TabItem label="Windows">
-        ~~~cmd
-        .\ferrumc.exe --log=info #for info level logging
-        ~~~
-    </TabItem>
-</Tabs>
+Info about logging can be found [here](/cli/logging#server).
 
-###### Logging values:
-    - trace (Extremely verbose)
-    - debug (Default, Slightly verbose, used for debugging)
-    - info (Recommended, useful information)
-    - warn (Only warnings)
-    - error (Only errors)
 
-<Aside type="tip">
+
+:::tip
     You can specify the directory to treat as the root directory (the place where the config files, data files, etc. live) by setting an environment variable `FERRUMC_ROOT` to the path of the directory.
     <Tabs syncKey="os">
         <TabItem label="Linux">
@@ -318,8 +301,6 @@ You can change logging level by using ```--log=<level>```:
         </TabItem>
     </Tabs>
     This is useful if you can't move the place the binary is executed from (`cargo run` for example).
-</Aside>
-
-
+:::
 
 ---

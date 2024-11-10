@@ -27,6 +27,13 @@ export default defineConfig({
 						{label: 'Comparison', slug: 'about/comparison'},
 					],
 				},
+				{
+					label: 'Reference',
+					items: [
+						{label: 'Functions', slug: 'reference/functions'},
+						{label: 'Configuration', slug: 'reference/config'},
+					],
+				},
 			],
 			favicon: "/favicon.ico",
 			customCss: [
