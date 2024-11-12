@@ -189,9 +189,8 @@ To start the server, run the following command:
     </TabItem>
 </HeadlessTabs>
 
-### Optional
-These steps are optional, but recommended.
-#### Generate a config file
+#### Optional steps:
+###### Generate a config file
 <HeadlessTabs syncKey="os">
     <TabItem label="Linux">
         ~~~bash
@@ -210,9 +209,9 @@ These steps are optional, but recommended.
     </TabItem>
 </HeadlessTabs>
 
-#### **Import an existing world**
+###### Import an existing world
 
-Place the region files (.mca) in the folder named import then run
+Place the region files (.mca) in the folder defined in the config
 <HeadlessTabs syncKey="os">
     <TabItem label="Linux">
         ~~~bash
@@ -228,34 +227,6 @@ Place the region files (.mca) in the folder named import then run
         ~~~powershell
         .\ferrumc.exe --import
         ~~~
-    </TabItem>
-</HeadlessTabs>
-
-The location of these files in minecraft is explained [here](https://minecraft.wiki/w/Region_file_format#Location)
-<HeadlessTabs syncKey="os">
-    <TabItem label="Linux">
-        <FileTree>
-            - import region files in here
-                - ...
-            - config.toml
-            - ferrumc
-        </FileTree>
-    </TabItem>
-    <TabItem label="macOS">
-        <FileTree>
-            - import region files in here
-                - ...
-            - config.toml
-            - ferrumc
-        </FileTree>
-    </TabItem>
-    <TabItem label="Windows">
-        <FileTree>
-            - import region files in here
-                - ...
-            - config.toml
-            - ferrumc.exe
-        </FileTree>
     </TabItem>
 </HeadlessTabs>
 
@@ -282,3 +253,9 @@ The location of these files in minecraft is explained [here](https://minecraft.w
 :::
 
 ---
+
+### Test Server
+
+FerrumC has a test server maintained by @0xnim. It runs on a nightly build of rewrite/v3.
+
+- **IP**: ferrumc.0xnim.com
